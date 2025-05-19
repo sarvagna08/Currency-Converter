@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Currency Converter</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="cc js.jpeg" type="image/png">
+  <link rel="manifest" href="manifest.json">
+
+
+  
+</head>
+<body>
+  <div class="container">
+    <img src="logo.png" alt="Currency Converter Logo" class="logo">
+
+    <button id="open-btn" onclick="showConverter()">Click here to open Currency Converter</button>
+
+    <div id="converter" style="display: none;">
+      <h2>Currency Converter</h2>
+
+      <label for="amount">Amount:</label>
+      <input type="number" id="amount" placeholder="Enter amount">
+
+      <label for="from">From:</label>
+      <select id="from">
+        <option value="USD">USD</option>
+        <option value="INR">INR</option>
+        <option value="EUR">EUR</option>
+      </select>
+
+      <label for="to">To:</label>
+      <select id="to">
+        <option value="INR">INR</option>
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+      </select>
+
+      <button onclick="convert()">Convert</button>
+
+      <div id="result"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('Service Worker Registered'))
+        .catch(error => console.error('Service Worker registration failed:', error));
+    }
+  </script>
+</body>
+</html>
